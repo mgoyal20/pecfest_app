@@ -67,7 +67,9 @@ export default class Home extends Component{
 		if(!this.state.isLoading){
       return (
         <ScrollView style={styles.container}>
+        <View style = {{height : 20}}>
           <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content" />
+        </View>
           <Text style={styles.mainHadding}>Trending</Text>
           <Text style={{fontFamily: 'Montserrat-Regular', fontSize: 22, color: colors.normal, marginLeft: 16}}>Farhan Live</Text>
           <View style ={{height: w/0.7, width: w, justifyContent: 'center', alignItems: 'center'}}>

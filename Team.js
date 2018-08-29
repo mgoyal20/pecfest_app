@@ -36,7 +36,9 @@ export default class Team extends Component{
 	render(){
 		return (
 			<ScrollView style={styles.scrollContainer} contentContainerStyle={{alignItems: 'center'}}>
+            <View style = {{height : 20}}>
 				<StatusBar backgroundColor={'rgba(0,0,0,0.8)'} barStyle="light-content"  />
+            </View>
 				<View style={{backgroundColor: '#ffffff', alignItems: 'center'}}>
 					<ImageBackground source = {{uri: 'http://pecfest.in/Images/background.jpg'}} style = {{alignItems: 'center'}}>
             <Image source = {require('./icons/logopf.png')}  style={[styles.logo, {tintColor:'white', marginTop: 56}]}/>

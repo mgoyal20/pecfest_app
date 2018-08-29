@@ -7,6 +7,7 @@ import {
   Image,
   View,
   Dimensions,
+  StatusBar,
   Alert,
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
@@ -75,6 +76,9 @@ export default class App extends React.Component<{}> {
   }
   return (
       <View style={styles.container}>
+        <View style = {{height : 20}}>
+            <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content"/>
+        </View>
         <View style = {styles.pageContainer}>
           <Page message={this.state.message} />
         </View>

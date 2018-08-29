@@ -36,7 +36,9 @@ export default class Developers extends Component{
 		
 		return (
       <View style={{flex:1, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center'}} >
-        <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content" />
+        <View style = {{height : 20}}>
+          <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content" />
+        </View>
       {/*<Image source={require('./developers/harman.png')} style={{height: 100, width: 100, borderRadius: 100}} />*/}
       <Text style={{fontFamily: 'Montserrat-Medium', fontSize: 22, color: colors.normal, marginTop: 0}}>{'<'}Developers{'/>'}</Text>
       <Text style={{fontFamily: 'Montserrat-Medium', fontSize: 18, color: colors.normal, marginTop: 8}}>Frontend</Text> 

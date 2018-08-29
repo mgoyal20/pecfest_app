@@ -9,6 +9,7 @@ import {
   StatusBar,
   TouchableWithoutFeedback,
   AsyncStorage,
+  TouchableOpacity,
   Linking
 } from 'react-native';
 
@@ -51,16 +52,16 @@ export default class Profile extends Component{
                   <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content" />
                   <Text style={{color: colors.teal, fontFamily: 'Montserrat-Medium', fontSize: 22}}>#Pecfest2018</Text>
                   <Text style={{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 12, marginBottom: 16, textAlign:'center'}}>Please Login or Sign Up and be a part of the Pecfest family.</Text>
-                    <TouchableWithoutFeedback onPress={this.changeScreen.bind(this, 'Login')} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
+                    <TouchableOpacity onPress={this.changeScreen.bind(this, 'Login')} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
                     <View style={{marginLeft: 16, marginRight: 16, height: 50, borderColor: colors.teal, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderRadius: 50, marginBottom: 16, width: Dimensions.get('window').width-32}}>
                       <Text style = {{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 22}}>Login</Text>
                     </View>
-                  </TouchableWithoutFeedback>
-                  <TouchableWithoutFeedback  onPress={this.changeScreen.bind(this, 'Register')} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
+                  </TouchableOpacity>
+                  <TouchableOpacity  onPress={this.changeScreen.bind(this, 'Register')} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
                     <View style={{marginLeft: 16, marginRight: 16, height: 50, borderColor: colors.teal, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderRadius: 50, marginBottom: 16, width: Dimensions.get('window').width-32}}>
                       <Text style = {{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 22}}>Sign Up</Text>
                     </View>
-                  </TouchableWithoutFeedback>
+                  </TouchableOpacity>
                 </View>
               )
       }

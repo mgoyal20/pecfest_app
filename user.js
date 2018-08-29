@@ -71,11 +71,9 @@ window._user = {
 					config.onFailed(res);
 					return;
 				}
-
 				config.onSuccess(res);
 			})
 			.catch(err => {
-				console.log("This should not happen");
 				config.onFailed(err);
 			})
 	},
@@ -105,9 +103,16 @@ window._user = {
 	},
 
 	checkVerified(mobile, config) {
-		fetch(api.url + 'user/isVerified/' + mobile)
+        fetch(api.url + 'user/isVerified', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({mobile}),
+        })
 			.then(data => data.json())
 			.then(json => {
+			    console.log(json.ACK + ' CheckVerified');
 				if (json.ACK !== 'SUCCESS') {
 					config.onFailed()
 					return

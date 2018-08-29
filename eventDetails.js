@@ -315,7 +315,9 @@ export default class EventDetails extends Component{
     return(
 
       <View style={styles.container}>
-          <StatusBar backgroundColor={colors.StatusBarTeal} barStyle="light-content" />
+        <View style = {{height : 20}}>
+          <StatusBar backgroundColor={colors.statusBarLight} barStyle="light-content" />
+        </View>
           <View style={styles.navBar}>
             <TouchableNativeFeedback onPress={this.handleBack.bind(this, 'true')} background={TouchableNativeFeedback.Ripple('#ffffff', true)}>
                <View style={styles.navButton}>

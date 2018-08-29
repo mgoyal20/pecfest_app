@@ -96,7 +96,9 @@ export default class Events_Home extends Component{
         return (
         
           <View style={styles.container}>
+          <View style = {{height : 20}}>
             <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content" />
+          </View>
             <TouchableNativeFeedback onPress={this.handleClick.bind(this, 'tech')} background={TouchableNativeFeedback.Ripple(colors.teal, false)}>
               <View style={styles.category}><Text style={styles.categoryLabel}>{categoryNames[0]}</Text></View>
             </TouchableNativeFeedback>
