@@ -105,7 +105,7 @@ window._user = {
 	},
 
 	checkVerified(mobile, config) {
-		fetch(api.url + 'user/is_verified/' + mobile)
+		fetch(api.url + 'user/isVerified/' + mobile)
 			.then(data => data.json())
 			.then(json => {
 				if (json.ACK !== 'SUCCESS') {

@@ -112,7 +112,7 @@ function getCoordinators(event) {
 
 
 window._api = {
-  url: 'http://api.pecfest.in/v1/',
+  url: 'https://pecfestbackend.herokuapp.com/',
   getEventsForCategory(category, config) {
     const events = [];
 

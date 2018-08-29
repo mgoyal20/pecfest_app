@@ -12,9 +12,9 @@ import {
   Linking
 } from 'react-native';
 
-import Login from './login.js';
-import Register from './register.js';
-import UserDetails from './userDetails.js'
+import Login from './login';
+import Register from './register';
+import UserDetails from './userDetails'
 import './global'
 import { createTransition, FlipX } from 'react-native-transition';
 
@@ -49,14 +49,14 @@ export default class Profile extends Component{
 			if(this.state.value == 'Home'){
         return ( <View style={{flex: 1,  backgroundColor: '#ffffff', justifyContent: 'center', alignItems: 'center'}}>
                   <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content" />
-                  <Text style={{color: colors.teal, fontFamily: 'Montserrat-Medium', fontSize: 22}}>#Pecfest2017</Text>
+                  <Text style={{color: colors.teal, fontFamily: 'Montserrat-Medium', fontSize: 22}}>#Pecfest2018</Text>
                   <Text style={{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 12, marginBottom: 16, textAlign:'center'}}>Please Login or Sign Up and be a part of the Pecfest family.</Text>
                     <TouchableWithoutFeedback onPress={this.changeScreen.bind(this, 'Login')} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
                     <View style={{marginLeft: 16, marginRight: 16, height: 50, borderColor: colors.teal, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderRadius: 50, marginBottom: 16, width: Dimensions.get('window').width-32}}>
                       <Text style = {{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 22}}>Login</Text>
                     </View>
                   </TouchableWithoutFeedback>
-                  <TouchableWithoutFeedback  onPress={ ()=>{ Linking.openURL('http://pecfest.in/register')}} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
+                  <TouchableWithoutFeedback  onPress={this.changeScreen.bind(this, 'Register')} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
                     <View style={{marginLeft: 16, marginRight: 16, height: 50, borderColor: colors.teal, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderRadius: 50, marginBottom: 16, width: Dimensions.get('window').width-32}}>
                       <Text style = {{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 22}}>Sign Up</Text>
                     </View>

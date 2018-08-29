@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
@@ -30,26 +31,36 @@ import {
   WaveIndicator,
 } from 'react-native-indicators';
 
-import Profile from './Profile.js'
-import Register from './register.js'
-import UserDetails from './userDetails.js'
-import './global.js'
-import user from './user.js'
+import Profile from './Profile'
+import Register from './register'
+import UserDetails from './userDetails'
+import './global'
+import user from './user'
 import RegisteredEventTab from './registeredEventsTab'
 import Events_Home from './Events_home'
 const colors = { selected: '#ff5a5f', normal: '#484848' , teal: '#008489', StatusBarTeal: '#066f73', separator: '#ebebeb',statusBarLight: '#f0f0f0'};
 
-
+var md5 = require('md5');
 export default class Login extends Component{
 
+constructor(props) {
+        super(props);
+
+        this.focusNextField = this.focusNextField.bind(this);
+        this.inputs = {};
+      }
+
+      focusNextField(id) {
+        this.inputs[id].focus();
+      }
   
 
   state = {
     pecfestID : null,
+    password: null,
     value:"Home",
     user: null,
   }
-
   componentDidMount(){
     BackHandler.addEventListener('hardwareBackPress', this.goBack.bind(this, this.props.from));
   }
@@ -60,10 +71,17 @@ export default class Login extends Component{
     //Alert.alert(message)
   }
 
-  logIn = () =>{
+  changeScreen = screen => {
+        this.setState({ value: screen })
 
+       // Alert.alert(loggedIn)
+      }
+
+
+  logIn = () =>{
+    //Alert.alert(md5(this.state.password));
     if(this.state.pecfestID != null){
-      user.login(this.state.pecfestID, {
+      user.login(this.state.pecfestID, md5(this.state.password), {
         onSuccess: (user) =>{
           global.loggedIn = true;
           global.user = user;
@@ -102,6 +120,9 @@ export default class Login extends Component{
       case 'Home':
     		return (
     			<ScrollView style= {{flex: 1, backgroundColor: '#ffffff'}} contentContainerStyle={{alignItems: 'center'}}>
+    			<View style = {{height : 20}}>
+    			<StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content"/>
+    			</View>
             <View style={{backgroundColor: 'white', height: 56, width: Dimensions.get('window').width}}>
               <TouchableNativeFeedback onPress={this.goBack.bind(this, this.props.from)} background={TouchableNativeFeedback.Ripple('#ffffff', true)}>
                    <View style={styles.navButton}>
@@ -109,13 +130,21 @@ export default class Login extends Component{
                    </View>           
                 </TouchableNativeFeedback>
             </View>
-
-            <StatusBar backgroundColor={colors.statusBarLight} barStyle="dark-content"/>
             <View style={{marginTop: Dimensions.get('window').width/3 - 56,backgroundColor: colors.teal, marginBottom: 32, width: Dimensions.get('window').width/3, height: Dimensions.get('window').width/3, borderRadius: Dimensions.get('window').width/3, alignItems: 'center', justifyContent: 'center'}}>
               <Image source = {require('./icons/logopf.png')} style={{tintColor: '#ffffff', height: Dimensions.get('window').width/3-64, width: Dimensions.get('window').width/3-64 }}/>
             </View>
-            <View style={{marginLeft: 16, marginRight: 16, height: 50, borderColor: colors.teal, alignItems: 'center',borderWidth: 0, borderRadius: 50, marginBottom: 8, width: Dimensions.get('window').width-32}}>
-              <TextInput onChangeText = {(pecfestID) => this.setState({pecfestID})} style={{position: 'absolute', top: 3, width: Dimensions.get('window').width - 63, borderWidth: 0, borderColor: 'white', textAlign: 'center',fontFamily: 'Montserrat-Regular', fontSize: 22, height: 49, color: colors.teal}} placeholder={'Enter Your Pecfest ID'} underlineColorAndroid={'white'} autoCapitalize={'characters'} blurOnSubmit={false} selectionColor={colors.teal}/>
+            <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <View style={styles.inputFieldView}>
+                  <TextInput onChangeText = {(pecfestID) => this.setState({pecfestID})} style={styles.inputField} placeholder={'Enter Your Pecfest ID'}
+                  underlineColorAndroid={'white'} autoCapitalize={'characters'} blurOnSubmit={false} selectionColor={colors.teal}
+                  blurOnSubmit={ false } onSubmitEditing={() => { this.focusNextField('password');}} returnKeyType={ "next" }
+                                ref={ input => { this.inputs['username'] = input;}}/>
+                </View>
+                <View style={styles.inputFieldView}>
+                    <TextInput secureTextEntry={true} onChangeText = {(password) => this.setState({password})} style={styles.inputField} placeholder={'Enter Your Password'}
+                    underlineColorAndroid={'white'} autoCapitalize={'none'} blurOnSubmit={false} selectionColor={colors.teal}
+                    blurOnSubmit={ true } returnKeyType={ "done" } ref={ input => { this.inputs['password'] = input;}}/>
+                </View>
             </View>
             <TouchableWithoutFeedback  onPress={this.logIn} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
                         <View style={{marginLeft: 16, marginRight: 16, height: 50, borderColor: colors.teal, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderRadius: 50, marginBottom: 8, width: Dimensions.get('window').width-32}}>
@@ -123,7 +152,7 @@ export default class Login extends Component{
                         </View>
                       </TouchableWithoutFeedback>
             <TouchableHighlight>
-              <Text style={{fontFamily: 'Montserrat-Light', color: colors.teal, textAlign: 'center'}} onPress={ ()=>{ Linking.openURL('http://pecfest.in/register')}}>Don't have a Pecfest ID?{'\n'}Sign Up</Text>
+              <Text style={{fontFamily: 'Montserrat-Light', color: colors.teal, textAlign: 'center'}} onPress={this.changeScreen.bind(this, 'Register')}>Don't have a Pecfest ID?{'\n'}Sign Up</Text>
             </TouchableHighlight>
 
             { this.state.loggingIn ? <ActivityIndicator animating={true} style={{marginTop: 12}} size={'small'} color={colors.teal} /> : <View /> }
@@ -140,6 +169,11 @@ export default class Login extends Component{
         return(
           <Register from = 'login' />
         )
+
+        case 'Register' :
+                return (
+                  <Register from = {"login"}/>
+                )
 
       case 'userDetails':
         return(
@@ -165,6 +199,31 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#eeeeee',
+  },
+
+  inputFieldView: {
+    marginLeft: 16,
+    marginRight: 16,
+    height: 50,
+    borderColor: colors.teal,
+    alignItems: 'center',
+    borderWidth: 0,
+    borderRadius: 50,
+    marginBottom: 8,
+    width: Dimensions.get('window').width-32
+  },
+
+  inputField: {
+    position: 'absolute',
+    top: 3,
+    width: Dimensions.get('window').width - 63,
+    borderWidth: 0,
+    borderColor: 'white',
+    textAlign: 'center',
+    fontFamily: 'Montserrat-Regular',
+    fontSize: 22,
+    height: 49,
+    color: colors.teal
   },
 
   eventCard:{
