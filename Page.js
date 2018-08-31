@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-  Alert,
-  TouchableNativeFeedback,
-  AsyncStorage
+    StyleSheet,
+    Text,
+    View,
+    Dimensions,
+    Alert,
+    TouchableNativeFeedback,
+    AsyncStorage
 } from 'react-native';
 
 import Home from './Home.js'
@@ -19,64 +19,66 @@ import Developers from './developers'
 var pecfestID = 'null'
 export default class Page extends Component {
 
-	componentDidMount(){
-		AsyncStorage.getItem('pecfestID').then((value) => {
-      pecfestID = value;
-      });
-	}
-	componentDidUpdate(){
-		AsyncStorage.getItem('pecfestID').then((value) => {
-      pecfestID = value;
-      });
-	}
-	render() {
+    componentDidMount() {
+        AsyncStorage.getItem('pecfestID').then((value) => {
+            pecfestID = value;
+        });
+    }
 
-		switch(this.props.message){
-			case 'Home':
-				return (
-					<Home />
-					
-				)
+    componentDidUpdate() {
+        AsyncStorage.getItem('pecfestID').then((value) => {
+            pecfestID = value;
+        });
+    }
 
-			case 'Events':
-				return (
+    render() {
 
-					<Events message={'Home'}/>
-				)
-			case 'Team':
-				return (
+        switch (this.props.message) {
+            case 'Home':
+                return (
+                    <Home/>
 
-					<Team />
-				)
-			case 'Profile':
-				return (
+                )
 
-					<Profile />
-				)
+            case 'Events':
+                return (
 
-			case 'userDetails':
-				return(
-					<UserDetails />
-				)
-			case 'Developers':
-				return(
-					<Developers />
-				)
-			default:
-				return (
+                    <Events message={'Home'}/>
+                )
+            case 'Team':
+                return (
 
-					<View style={{
-						flex: 1,
-						backgroundColor: '#a51c30',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}>
-					<Text>Nothing</Text>
-					<Text>Hello jhdjahjdhajdhajhdjahdjahdjahjdhajdh</Text>
-					</View>
-				)
+                    <Team/>
+                )
+            case 'Profile':
+                return (
 
-		}
+                    <Profile/>
+                )
 
-	}
+            case 'userDetails':
+                return (
+                    <UserDetails/>
+                )
+            case 'Developers':
+                return (
+                    <Developers/>
+                )
+            default:
+                return (
+
+                    <View style={{
+                        flex: 1,
+                        backgroundColor: '#a51c30',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}>
+                        <Text>Nothing</Text>
+                        <Text>Hello jhdjahjdhajdhajhdjahdjahdjahjdhajdh</Text>
+                    </View>
+                )
+
+        }
+
+    }
 }

@@ -6,7 +6,14 @@ import {
 } from 'react-native';
 
 var React = require('react-native');
-const colors = { selected: '#ff5a5f', normal: '#484848' , teal: '#008489', StatusBarTeal: '#066f73', separator: '#ebebeb',statusBarLight: '#f0f0f0'};
+const colors = {
+    selected: '#ff5a5f',
+    normal: '#484848',
+    teal: '#008489',
+    StatusBarTeal: '#066f73',
+    separator: '#ebebeb',
+    statusBarLight: '#f0f0f0'
+};
 
 
 const styles = StyleSheet.create({
@@ -15,13 +22,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#eeeeee',
     },
 
-    pickerField:{
+    pickerField: {
         width: Dimensions.get('window').width - 32,
         alignItems: 'center',
         color: colors.teal
     },
 
-    inputFieldView:{
+    inputFieldView: {
         marginLeft: 16,
         marginRight: 16,
         height: 50,
@@ -30,12 +37,13 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         borderRadius: 50,
         marginBottom: 8,
-        width: Dimensions.get('window').width-32
+        width: Dimensions.get('window').width - 32
     },
 
-    inputField:{position: 'absolute',
+    inputField: {
+        position: 'absolute',
         top: 3,
-        width: Dimensions.get('window').width-32,
+        width: Dimensions.get('window').width - 32,
         borderWidth: 0,
         borderColor: 'white',
         textAlign: 'center',
@@ -45,7 +53,7 @@ const styles = StyleSheet.create({
         color: colors.teal
     },
 
-    eventCard:{
+    eventCard: {
         backgroundColor: '#ffffff',
         paddingLeft: 16,
         paddingRight: 16,
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
         marginLeft: 8,
         elevation: 2,
         borderRadius: 4,
-        width: Dimensions.get('window').width-16,
+        width: Dimensions.get('window').width - 16,
         justifyContent: 'center'
     },
 
@@ -69,7 +77,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
 
-    teamSize:{
+    teamSize: {
         fontFamily: 'Montserrat-Regular',
         color: colors.normal,
         fontSize: 18,
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
         //paddingBottom: 16,
     },
 
-    logoText:{
+    logoText: {
         fontFamily: 'Montserrat-Medium',
         color: colors.teal,
         fontSize: 36,
@@ -85,7 +93,7 @@ const styles = StyleSheet.create({
         //paddingBottom: 16,
     },
 
-    sponsorText:{
+    sponsorText: {
         fontFamily: 'Montserrat-Medium',
         color: colors.normal,
         fontSize: 30,
@@ -93,7 +101,7 @@ const styles = StyleSheet.create({
         //paddingBottom: 16,
     },
 
-    prizeMoney:{
+    prizeMoney: {
         fontFamily: 'Montserrat-Regular',
         color: colors.teal,
         fontSize: 18,
@@ -108,7 +116,7 @@ const styles = StyleSheet.create({
         paddingBottom: 0,
     },
 
-    eventDescription:{
+    eventDescription: {
         fontFamily: 'Montserrat-Light',
         color: colors.normal,
         fontSize: 18,
@@ -134,7 +142,7 @@ const styles = StyleSheet.create({
         paddingBottom: 16,
     },
 
-    brief:{
+    brief: {
         fontFamily: 'Montserrat-Light',
         color: '#484848',
         fontSize: 18,
@@ -146,10 +154,10 @@ const styles = StyleSheet.create({
 
     navButton: {
         position: 'absolute',
-        left:0,
-        top:0,
+        left: 0,
+        top: 0,
         backgroundColor: 'white',
-        width:56,
+        width: 56,
         height: 56,
         alignItems: 'center',
         justifyContent: 'center',
@@ -157,15 +165,15 @@ const styles = StyleSheet.create({
 
     navButton2: {
         position: 'absolute',
-        right:0,
-        top:0,
+        right: 0,
+        top: 0,
         backgroundColor: colors.teal,
-        width:56,
+        width: 56,
         height: 56,
         alignItems: 'center',
         justifyContent: 'center',
     },
-    navBar:{
+    navBar: {
         height: 56,
         backgroundColor: colors.teal,
         flexDirection: 'row'
@@ -176,7 +184,7 @@ const styles = StyleSheet.create({
         top: 0,
         right: 0,
         left: 0,
-        bottom:0,
+        bottom: 0,
         backgroundColor: '#ffffff',
     },
 
@@ -185,7 +193,7 @@ const styles = StyleSheet.create({
         top: 0,
         right: 0,
         left: 0,
-        bottom:0,
+        bottom: 0,
         backgroundColor: '#ffffff',
     },
 
@@ -204,7 +212,7 @@ const styles = StyleSheet.create({
     },
 
     tab: {
-        width: Dimensions.get('window').width/2,
+        width: Dimensions.get('window').width / 2,
     },
 
     tabIcon: {
@@ -244,7 +252,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         //marginTop: 10,
-        flex:1,
+        flex: 1,
 
     }
 });
