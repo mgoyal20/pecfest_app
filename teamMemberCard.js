@@ -37,7 +37,7 @@ export default class TeamMemberCard extends Component{
 
     return(
       <TouchableNativeFeedback onPress={() => Communications.phonecall(this.props.phone, true)} background={TouchableNativeFeedback.Ripple(colors.teal, false)} useForeground={true}>
-        <ImageBackground source = {{uri: 'http://assets.pecfest.in/team/team_'+this.props.photo+'.jpg'}} style={{alignItems: 'center',justifyContent: 'flex-end',flex: 1, height: hc , width: hc, marginLeft: 4 ,marginRight: 4, backgroundColor: 'white', borderRadius: 0, marginTop: 4, elevation: 2}} >
+        <ImageBackground source = {{uri: 'http://assets.pecfest.in/team/'+this.props.photo+'.jpg'}} style={{alignItems: 'center',justifyContent: 'flex-end',flex: 1, height: hc , width: hc, marginLeft: 4 ,marginRight: 4, backgroundColor: 'white', borderRadius: 0, marginTop: 4, elevation: 2}} >
           <View  style = {{width: hc, backgroundColor: 'rgba(0,0,0,0.4)', borderRadius: 0, alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{fontFamily: 'Montserrat-Regular', color: 'white', fontSize: 16}}>{this.props.name}</Text>
             <Text style={{fontFamily: 'Montserrat-Light', color: 'white', fontSize: 12}}>{this.props.phone}</Text>

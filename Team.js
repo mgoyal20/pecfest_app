@@ -40,9 +40,9 @@ export default class Team extends Component{
 				<View style={{backgroundColor: '#ffffff', alignItems: 'center'}}>
 					<ImageBackground source = {{uri: 'http://pecfest.in/Images/background.jpg'}} style = {{alignItems: 'center'}}>
             <Image source = {require('./icons/logopf.png')}  style={[styles.logo, {tintColor:'white', marginTop: 56}]}/>
-            <Text style={styles.logoText}>#Pecfest2017</Text>
-            <Text style={{marginRight: 8, marginLeft: 8, textAlign: 'center', fontFamily: 'Montserrat-Medium', fontSize: 16, color: 'white', marginBottom: 0}}>27th October to 29th October</Text>
-            <Text style={{marginRight: 8, marginLeft: 8, textAlign: 'center', fontFamily: 'Montserrat-Medium', fontSize: 16, color: 'white', marginBottom: 8}}>Make your friends jealous by tweeting, posting, or whatever it is you do with the hashtag #Pecfest2017.</Text>
+            <Text style={styles.logoText}>#Pecfest2018</Text>
+            <Text style={{marginRight: 8, marginLeft: 8, textAlign: 'center', fontFamily: 'Montserrat-Medium', fontSize: 16, color: 'white', marginBottom: 0}}>26th October to 28th October</Text>
+            <Text style={{marginRight: 8, marginLeft: 8, textAlign: 'center', fontFamily: 'Montserrat-Medium', fontSize: 16, color: 'white', marginBottom: 8}}>Make your friends jealous by tweeting, posting, or whatever it is you do with the hashtag #Pecfest2018 #CityOfStars.</Text>
             <View style={{flexDirection: 'row', backgroundColor: 'transparent', height: 24, width: Dimensions.get('window').width, marginBottom: 16, justifyContent: 'center'}}>
               <TouchableHighlight onPress={() => {Linking.openURL('https://www.facebook.com/pecfestofficial')}}>
                 <Image source={require('./icons/facebook-logo.png')} style={{marginLeft:4, marginRight: 4, width: 24, height: 24, tintColor: 'white'}} />

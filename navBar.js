@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 
-const colors = { selected: '#ff5a5f', normal: '#a5a59a' , teal: '#008489'};
+const colors = { selected: '#ff5a5f', normal: '#a5a59a' , teal: '#000032'};
 
 
 

@@ -221,7 +221,7 @@ export default class EventDetails extends Component{
       <Text style={{fontFamily: 'Montserrat-Regular', color: colors.teal, fontSize: 16, marginLeft: 16, borderColor: colors.teal, marginBottom: 16}}>{this.props.event.location} on Day {this.props.event.day} @ {this.props.event.time}</Text>
       <View style={{backgroundColor: colors.separator, height:1,  width: Dimensions.get('window').width-16, left: 8}}/>
       {/*<Text style={styles.eventRulesHadding}>Rules</Text>*/}
-      <Text style={styles.rules}>{this.props.event.rulesList.split('<br />').join('\n')}</Text>
+      <Text style={styles.rules}>{this.props.event.rulesList.split('<br/>').join('\n')}</Text>
       <TouchableWithoutFeedback onPress={this.changeIndex.bind(this, 1)} background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
         <View style={{marginLeft: 16, marginRight: 16, height: 50, borderColor: colors.teal, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderRadius: 50, marginBottom: 16}}>
           <Text style = {{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 22}}>Register</Text>

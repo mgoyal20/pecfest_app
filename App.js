@@ -103,12 +103,12 @@ export default class App extends React.Component<{}> {
                 
             </View>
           </TouchableNativeFeedback>
-          <TouchableNativeFeedback onPress={this.handleClick.bind(this, "Developers")} background={TouchableNativeFeedback.Ripple(colors.selected, true)}>
-            <View style = {styles.tabIconContainer} >
-                <Image source = {require('./icons/code.png')} style={[styles.tabIcon, {tintColor: (this.state.message == 'Developers' ) ? colors.selected : colors.normal}]}/>
-                
-            </View>
-          </TouchableNativeFeedback>
+          {/*<TouchableNativeFeedback onPress={this.handleClick.bind(this, "Developers")} background={TouchableNativeFeedback.Ripple(colors.selected, true)}>*/}
+            {/*<View style = {styles.tabIconContainer} >*/}
+                {/*<Image source = {require('./icons/code.png')} style={[styles.tabIcon, {tintColor: (this.state.message == 'Developers' ) ? colors.selected : colors.normal}]}/>*/}
+                {/**/}
+            {/*</View>*/}
+          {/*</TouchableNativeFeedback>*/}
           
         </ View>
       </View>

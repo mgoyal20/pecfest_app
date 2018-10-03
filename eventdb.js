@@ -116,7 +116,7 @@ window._api = {
   getEventsForCategory(category, config) {
     const events = [];
 
-    fetch(this.url + 'app/event/category/' + category.id)
+    fetch(this.url + 'event/category/' + category.id)
       .then(data => data.json())
       .then(events => {
         if (events.ACK === 'SUCCESS') {
@@ -186,19 +186,19 @@ window._api = {
       })
   },
 
-  getSponsors(config) {
-    fetch('http://assets.pecfest.in/sponsors.txt')
-      .then(data => data.json())
-      .then(cats => {
-        for (const cat in cats) {
-          activities.push(cats[cat])
-        }
-        config.onSuccess(activities);
-      })
-      .catch(err => {
-        config.onFailed(err)
-      })
-  },
+  // getSponsors(config) {
+  //   fetch('http://assets.pecfest.in/sponsors.txt')
+  //     .then(data => data.json())
+  //     .then(cats => {
+  //       for (const cat in cats) {
+  //         activities.push(cats[cat])
+  //       }
+  //       config.onSuccess(activities);
+  //     })
+  //     .catch(err => {
+  //       config.onFailed(err)
+  //     })
+  // },
 
   getTrending(config) {
     fetch('http://assets.pecfest.in/posters.txt')
