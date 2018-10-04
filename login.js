@@ -18,18 +18,6 @@ import {
   Linking
 } from 'react-native';
 
-import {
-  BallIndicator,
-  BarIndicator,
-  DotIndicator,
-  MaterialIndicator,
-  PacmanIndicator,
-  PulseIndicator,
-  SkypeIndicator,
-  UIActivityIndicator,
-  WaveIndicator,
-} from 'react-native-indicators';
-
 import Profile from './Profile.js'
 import Register from './register.js'
 import UserDetails from './userDetails.js'
@@ -39,11 +27,7 @@ import RegisteredEventTab from './registeredEventsTab'
 import Events_Home from './Events_home'
 const colors = { selected: '#ff5a5f', normal: '#484848' , teal: '#008489', StatusBarTeal: '#066f73', separator: '#ebebeb',statusBarLight: '#f0f0f0'};
 
-
 export default class Login extends Component{
-
-  
-
   state = {
     pecfestID : null,
     value:"Home",
@@ -57,7 +41,6 @@ export default class Login extends Component{
   goBack = screen => {
     this.setState({ value: screen })
     return true;
-    //Alert.alert(message)
   }
 
   logIn = () =>{

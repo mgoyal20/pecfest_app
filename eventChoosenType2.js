@@ -9,27 +9,16 @@ import {
   Image,
   ScrollView,
   StatusBar,
-  ActivityIndicator,
   BackHandler,
   ImageBackground
 } from 'react-native';
 
 import {
-  BallIndicator,
-  BarIndicator,
-  DotIndicator,
   MaterialIndicator,
-  PacmanIndicator,
-  PulseIndicator,
-  SkypeIndicator,
-  UIActivityIndicator,
-  WaveIndicator,
   TouchableWithoutFeedback
 } from 'react-native-indicators';
 
 import Events_home from './Events_home'
-import NavBar from './navBar'
-import EventCard from './eventCard'
 import EventDetails from './eventDetails'
 import CarouselTest from './carouselTest'
 import {api} from './eventdb'
