@@ -102,7 +102,7 @@ function getCoordinators(event) {
     }
 
     return {
-      name, phone, email
+      name, phone, emaila
     }
   });
 
