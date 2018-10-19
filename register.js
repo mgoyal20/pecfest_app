@@ -13,7 +13,6 @@ import {
     TouchableOpacity,
     Picker, AsyncStorage
 } from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 import Login from './login'
 import Profile from './Profile'
 import user from './user'

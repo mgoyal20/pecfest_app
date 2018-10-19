@@ -5,179 +5,161 @@ global.loggedIn = false;
 global.activities = null;
 global.sponsors = [
     {
-        "type": "Title Sponsors",
-        "sponsors": [
-            {
-                "name": "Honda",
-                "image": "honda.jpg",
-                "color": "",
-                "link": ""
-            }
-        ]
-    },
-    {
         "type": "In Association With",
         "sponsors": [
             {
-                "link": "",
-                "name": "color's",
-                "image": "colors_assoc.jpg",
-                "color": ""
+                "name" : 'Hero Cycles',
+                "image" : 'Hero logo.png',
             },
             {
-                "link": "",
-                "name": "vh1",
-                "image": "vh1_assoc.jpg",
-                "color": ""
-            }, {
-                "link": "",
-                "name": "Comio Mobiles",
-                "image": "comio.jpg",
-                "color": ""
+                "name" : 'Hero Lectro',
+                "image" : 'Hero_Lectro Logo.jpg',
+            },
+            {
+                "name" : 'Havells',
+                "image" : 'Havells.PNG',
             }
         ]
     },
+
     {
-        "type": "Technology Partner",
+        "type": "Social Media Partner",
         "sponsors": [
             {
-                "link": "",
-                "name": "ZAP",
-                "image": "zap.png",
-                "color": ""
+                "name" : 'Tik Tok',
+                "image" : 'TikTok.PNG',
+                "link" : 'https://go.onelink.me/bIdt/Spectal4',
             }
         ]
     },
+
     {
-        "type": "Official Overseas Partner",
+        "type": "Photography Partner",
         "sponsors": [
             {
-                "link": "",
-                "name": "JMK",
-                "image": "jmk.JPG",
-                "color": ""
+                "name" : 'Procolor',
+                "image" : 'logo pspf.jpg',
             }
         ]
     },
+
     {
-        "type": "Official Photography Partner",
+        "type": "Poker Partner",
         "sponsors": [
             {
-                "link": "https://www.facebook.com/hawkeyedphotographers/?fref=ts",
-                "name": "Hawkeyed",
-                "image": "Hawkeyed_phot.jpg",
-                "color": ""
+                "name" : 'PokerBaazi',
+                "image" : 'Pokerbaazi_Poker Partner.jpg',
+                "link" : 'https://www.pokerbaazi.com',
             }
         ]
     },
+
     {
-        "type": "Cycling Partners",
+        "type": "Shaving Partner",
         "sponsors": [
             {
-                "link": "",
-                "name": "Hero",
-                "image": "hero.jpg",
-                "color": "",
-                "type": ""
+                "name" : 'Lets Shave',
+                "image" : 'LetsShave.com.png',
             }
         ]
     },
+
     {
-        "type": "Dairy Partner",
+        "type": "Student Media Partner",
         "sponsors": [
             {
-                "link": "",
-                "name": "Verka",
-                "image": "verka.jpg",
-                "color": ""
-            }
-        ]
-    },
-    {
-        "type": "Official Media Partner",
-        "sponsors": [
-            {
-                "link": "http://www.google.com",
-                "name": "TSN",
-                "image": "tsn_official_media.jpg",
-                "color": ""
-            }
-        ]
-    },
-    {
-        "type": "FM Partner",
-        "sponsors": [
-            {
-                "link": "",
-                "name": "92.7 Big FM",
-                "image": "fmpartner.jpg",
-                "color": ""
-            }
-        ]
-    },
-    {
-        "type": "Youth Partner",
-        "sponsors": [
-            {
-                "link": "",
                 "name": "PU Pulse",
                 "image": "pupulse_youth.jpg",
-                "color": ""
             }
         ]
     },
+
     {
         "type": "Associate Sponsors",
         "sponsors": [
+            {
+                "name" : 'JK Cement',
+                "image" : 'JK cement ltd final logo.jpg',
+            },
+            {
+                "name" : 'Verka',
+                "image" : 'verka.jpg',
+            },
+            {
+                "name" : 'Paul Merchants',
+                "image" : 'PML Logo.jpg',
+            },
+            {
+                "name" : 'HMEL',
+                "image" : 'HMEL.PNG',
+            },
+            {
+                "name" : 'ICICI',
+                "image" : 'ICICI.jpg',
+            },
+            {
+                "name" : 'Brew Estate',
+                "image" : 'BrewEstate.png',
+            }
+        ]
+    },
 
+    {
+        "type": "Food Partners",
+        "sponsors": [
             {
-                "link": "",
-                "name": "Guru Nanak Sweets",
-                "image": "GNL.jpeg",
-                "color": ""
+                "name" : 'Churiosity',
+                "image" : 'Churiosity.jpeg',
             },
+            {
+                "name" : 'Burger Point',
+                "image" : 'Burger Point.jpeg',
+            },
+            {
+                "name" : 'London Shakes',
+                "image" : 'London Shakes.jpg',
+            },
+            {
+                "name" : 'Prince Refreshments',
+                "image" : 'Prince Refreshments_Food Stall.jpg',
+            }
+        ]
+    },
 
+    {
+        "type": "Associate Sponsors",
+        "sponsors": [
             {
-                "link": "",
-                "name": "Coding Ninjas",
-                "image": "Coding_Ninjas.png",
-                "color": ""
+                "name" : 'CareerGuide',
+                "image" : 'Careerguide.jpg',
             },
             {
-                "link": "",
-                "name": "Mercedes",
-                "image": "mercedes.png",
-                "color": ""
+                "name" : 'Eat My News',
+                "image" : 'eatmynews.png',
             },
             {
-                "link": "",
-                "name": "Pokermet",
-                "image": "Pokermet.png",
-                "color": ""
+                "name" : 'Emitap Entertainments',
+                "image" : 'Emitap Entertainments.jpg',
             },
             {
-                "link": "",
-                "name": "Prachi",
-                "image": "Prachi.jpg",
-                "color": ""
+                "name" : 'InsideIIM',
+                "image" : 'InsideIIM.png',
             },
             {
-                "link": "",
-                "name": "Strands",
-                "image": "strands.jpg",
-                "color": ""
+                "name" : 'Intern Theory',
+                "image" : 'Intern Theory.jpg',
             },
             {
-                "link": "",
-                "name": "GBP",
-                "image": "GBP.jpg",
-                "color": ""
+                "name" : 'Todaysera',
+                "image" : 'todaysera.png',
             },
             {
-                "link": "",
-                "name": "GSP",
-                "image": "gsp.jpg",
-                "color": ""
+                "name" : 'Jux Pux',
+                "image" : 'Jux Pux Logo.png',
+            },
+            {
+                "name" : 'Million Lights',
+                "image" : 'Millionlights Logo Gray.png',
             }
         ]
     },

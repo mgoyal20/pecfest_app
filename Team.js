@@ -43,7 +43,7 @@ export default class Team extends Component {
             <ScrollView style={styles.scrollContainer} contentContainerStyle={{alignItems: 'center'}}>
                 <StatusBar backgroundColor={'rgba(0,0,0,0.8)'} barStyle="light-content"/>
                 <View style={{backgroundColor: '#ffffff', alignItems: 'center'}}>
-                    <ImageBackground source={{uri: 'http://pecfest.in/Images/background.jpg'}}
+                    <ImageBackground source={{uri: 'http://pecfest.in/Images/test.jpg'}}
                                      style={{alignItems: 'center'}}>
                         <Image source={require('./icons/logopf.png')}
                                style={[styles.logo, {tintColor: 'white', marginTop: 56}]}/>
@@ -55,7 +55,8 @@ export default class Team extends Component {
                             fontFamily: 'Montserrat-Medium',
                             fontSize: 16,
                             color: 'white',
-                            marginBottom: 0
+                            marginBottom: 0,
+                            backgroundColor: 'rgba(0,0,0,0.7)'
                         }}>26th October to 28th October</Text>
                         <Text style={{
                             marginRight: 8,
@@ -64,12 +65,12 @@ export default class Team extends Component {
                             fontFamily: 'Montserrat-Medium',
                             fontSize: 16,
                             color: 'white',
-                            marginBottom: 8
+                            marginBottom: 8,
+                            backgroundColor: 'rgba(0,0,0,0.7)'
                         }}>Make your friends jealous by tweeting, posting, or whatever it is you do with the hashtag
                             #Pecfest2018 #CityOfStars.</Text>
                         <View style={{
                             flexDirection: 'row',
-                            backgroundColor: 'transparent',
                             height: 24,
                             width: Dimensions.get('window').width,
                             marginBottom: 16,
@@ -83,7 +84,8 @@ export default class Team extends Component {
                                     marginRight: 4,
                                     width: 24,
                                     height: 24,
-                                    tintColor: 'white'
+                                    tintColor: 'white',
+                                    backgroundColor: 'rgba(0,0,0,0.7)'
                                 }}/>
                             </TouchableHighlight>
                             <TouchableHighlight onPress={() => {
@@ -94,7 +96,8 @@ export default class Team extends Component {
                                     marginRight: 4,
                                     width: 24,
                                     height: 24,
-                                    tintColor: 'white'
+                                    tintColor: 'white',
+                                    backgroundColor: 'rgba(0,0,0,0.7)'
                                 }}/>
                             </TouchableHighlight>
                             <TouchableHighlight onPress={() => {
@@ -105,7 +108,8 @@ export default class Team extends Component {
                                     marginRight: 4,
                                     width: 24,
                                     height: 24,
-                                    tintColor: 'white'
+                                    tintColor: 'white',
+                                    backgroundColor: 'rgba(0,0,0,0.7)'
                                 }}/>
                             </TouchableHighlight>
                             <TouchableHighlight onPress={() => {
@@ -116,7 +120,8 @@ export default class Team extends Component {
                                     marginRight: 4,
                                     width: 24,
                                     height: 24,
-                                    tintColor: 'white'
+                                    tintColor: 'white',
+                                    backgroundColor: 'rgba(0,0,0,0.7)'
                                 }}/>
                             </TouchableHighlight>
                         </View>

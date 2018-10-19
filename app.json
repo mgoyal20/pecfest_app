@@ -1,5 +1,17 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "name": "Pecfest'18",
+    "icon": "./icons/logo@1x.png",
+    "description": "Official app for Pecfest 2018",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "slug": "Pecfest2k18",
+    "ios": {
+      "bundleIdentifier": "com.pecfestbeta.Pecfest2k18"
+    },
+    "android": {
+        "package": "com.pecfestbeta.Pecfest2k18"
+    }
   }
 }

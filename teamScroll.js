@@ -20,40 +20,42 @@ export default class TeamMembers extends Component {
         var members = [];
         members.push(
             <View key={1} style={{alignItems: 'center'}}>
-                <Text style={{
-                    fontFamily: 'Montserrat-Medium',
-                    color: colors.normal,
-                    fontSize: 22,
-                    marginTop: 12,
-                    marginBottom: 8
-                }}>Convener</Text>
                 <View style={{
                     backgroundColor: 'white',
-                    width: (Dimensions.get('window').width - 8) / 2,
-                    height: (Dimensions.get('window').width - 24) / 2 + 8,
+                    width: (Dimensions.get('window').width - 8),
+                    height: (Dimensions.get('window').width - 24) / 2 + 40,
                     flexDirection: 'row',
                     marginRight: 4,
                     marginLeft: 4
                 }}>
-                    <TeamMemberCard name={'Akhilesh Sharma'} phone={'+91-9888696867'} photo={'Akhilesh'}/>
-                </View>
-
-                <Text style={{
-                    fontFamily: 'Montserrat-Medium',
-                    color: colors.normal,
-                    fontSize: 22,
-                    marginTop: 8,
-                    marginBottom: 8
-                }}>Co-Convener</Text>
-                <View style={{
-                    backgroundColor: 'white',
-                    width: (Dimensions.get('window').width - 8) / 2,
-                    height: (Dimensions.get('window').width - 24) / 2 + 8,
-                    flexDirection: 'row',
-                    marginRight: 4,
-                    marginLeft: 4
-                }}>
-                    <TeamMemberCard name={'Harsh Sharma'} phone={'+91-9878235871'} photo={'Harsh'}/>
+                    <View style={{
+                        width: (Dimensions.get('window').width - 8) / 2,
+                        flexDirection: 'column'
+                    }}>
+                        <Text style={{
+                            fontFamily: 'Montserrat-Regular',
+                            color: colors.normal,
+                            fontSize: 22,
+                            marginTop: 12,
+                            marginBottom: 8,
+                            textAlign: 'center'
+                        }}>Convener</Text>
+                        <TeamMemberCard name={'Akhilesh Sharma'} phone={'+91-9888696867'} photo={'Akhilesh'}/>
+                    </View>
+                    <View style={{
+                        width: (Dimensions.get('window').width - 8) / 2,
+                        flexDirection: 'column'
+                    }}>
+                        <Text style={{
+                            fontFamily: 'Montserrat-Regular',
+                            color: colors.normal,
+                            fontSize: 22,
+                            marginTop: 8,
+                            marginBottom: 8,
+                            textAlign: 'center'
+                        }}>Co-Convener</Text>
+                        <TeamMemberCard name={'Harsh Sharma'} phone={'+91-9878235871'} photo={'Harsh'}/>
+                    </View>
                 </View>
 
                 <Text style={{
