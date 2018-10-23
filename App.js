@@ -16,20 +16,23 @@ import {
 
 } from 'react-native';
 import Expo from 'expo';
+import {Notifications} from 'expo';
 import {StackNavigator} from 'react-navigation'
 import Page from './Page'
 const colors = { selected: '#ff5a5f', normal: '#484848' };
 const homeIcon = './icons/ic_home_36pt.png'
 import Events from './Events.js'
+import registerForPushNotificationsAsync from './notifications';
 
 var loggedIn = 'false';
 var pecfestID = 'null';
 var user = {};
 
-export default class App extends React.Component<{}> {
+export default class App extends React.Component<> {
   state = {
     message: "Home",
     loading: true,
+      notification: {}
   }
 
   async componentWillMount() {
@@ -40,8 +43,14 @@ export default class App extends React.Component<{}> {
       });
       this.setState({ loading: false });
   }
+
+  _handleNotification = (notification) => {
+      this.setState({notification: notification});
+  }
   
   componentDidMount(){
+      registerForPushNotificationsAsync();
+      this._notificationSubscription = Notifications.addListener(this._handleNotification);
     BackHandler.addEventListener('hardwareBackPress', BackHandler.exitApp);
     AsyncStorage.getItem('loggedIn').then((value) => {
         if(value == 'true'){

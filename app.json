@@ -11,7 +11,8 @@
       "bundleIdentifier": "com.pecfestbeta.Pecfest2k18"
     },
     "android": {
-        "package": "com.pecfestbeta.Pecfest2k18"
+        "package": "com.pecfestbeta.Pecfest2k18",
+        "googleServicesFile": "./google-services.json"
     }
   }
 }
