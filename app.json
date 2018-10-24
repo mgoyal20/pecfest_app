@@ -4,7 +4,7 @@
     "name": "Pecfest'18",
     "icon": "./icons/unnamed.png",
     "description": "Official app for Pecfest 2018",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "slug": "Pecfest2k18",
     "ios": {
