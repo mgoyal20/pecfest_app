@@ -115,19 +115,29 @@ export default class Register extends Component {
                     onSuccess: (verified) => {
                         if (verified) {
                             user.login(res.pecfestId, {
-                                onSuccess: (user) =>{
+                                onSuccess: (user) => {
                                     global.loggedIn = true;
                                     global.user = user;
-                                    AsyncStorage.setItem('loggedIn', 'true', () =>{
+                                    AsyncStorage.setItem('loggedIn', 'true', () => {
                                         AsyncStorage.setItem('user', JSON.stringify(user));
-                                        if(this.props.from == 'profile'){
-                                            this.setState({value: 'userDetails', user: user, signIn: true, pecfestId: res.pecfestId})
-                                        }else{
-                                            this.setState({value: 'registerTab', user: user, signIn: true, pecfestId: res.pecfestId})
+                                        if (this.props.from == 'profile') {
+                                            this.setState({
+                                                value: 'userDetails',
+                                                user: user,
+                                                signIn: true,
+                                                pecfestId: res.pecfestId
+                                            })
+                                        } else {
+                                            this.setState({
+                                                value: 'registerTab',
+                                                user: user,
+                                                signIn: true,
+                                                pecfestId: res.pecfestId
+                                            })
                                         }
                                     });
                                 },
-                                onFailed: (error) =>{
+                                onFailed: (error) => {
                                     if (error.message)
                                         Alert.alert(error.message);
                                     else if (error.ACK)
@@ -135,7 +145,7 @@ export default class Register extends Component {
                                     else
                                         Alert.alert("Check your internet connection.")
 
-                                    this.setState({ loggingIn: false })
+                                    this.setState({loggingIn: false})
                                 }
                             });
                         } else {
@@ -155,7 +165,10 @@ export default class Register extends Component {
             onFailed: (err) => {
                 if (typeof err.ACK !== 'undefined') {
                     if (err.ACK === 'ALREADY') {
-                        this.setState({message: 'Account already exists. Please Login with PECFEST ID.', value: 'login'});
+                        this.setState({
+                            message: 'Account already exists. Please Login with PECFEST ID.',
+                            value: 'login'
+                        });
                         Alert.alert(this.state.message);
                     }
                     else {
@@ -188,107 +201,104 @@ export default class Register extends Component {
                     <Text
                         style={{color: colors.teal, fontFamily: 'Montserrat-Regular', fontSize: 12, marginBottom: 16}}>The
                         fun is just few details away.</Text>
-                    <KeyboardAwareScrollView style={{flex: 1, backgroundColor: '#ffffff'}}
-                                             contentContainerStyle={{alignItems: 'center', justifyContent: 'center'}}>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <TextInput onChangeText={(name) => this.setState({name})} style={styles.inputField}
-                                       placeholder={'Name'}
-                                       underlineColorAndroid={'white'} autoCapitalize={'words'} blurOnSubmit={false}
-                                       selectionColor={colors.teal}
-                                       blurOnSubmit={false} onSubmitEditing={() => {
-                                this.focusNextField('mobile');
-                            }} returnKeyType={"next"}
-                                       ref={input => {
-                                           this.inputs['Name'] = input;
-                                       }}/>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <TextInput onChangeText={(name) => this.setState({name})} style={styles.inputField}
+                                   placeholder={'Name'}
+                                   underlineColorAndroid={'white'} autoCapitalize={'words'} blurOnSubmit={false}
+                                   selectionColor={colors.teal}
+                                   blurOnSubmit={false} onSubmitEditing={() => {
+                            this.focusNextField('mobile');
+                        }} returnKeyType={"next"}
+                                   ref={input => {
+                                       this.inputs['Name'] = input;
+                                   }}/>
 
-                        </ScrollView>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <TextInput onChangeText={(mobileNumber) => this.setState({mobileNumber})}
-                                       keyboardType="phone-pad" style={styles.inputField}
-                                       placeholder={'Your Mobile Number (in 10 digits)'}
-                                       underlineColorAndroid={'white'} autoCapitalize={'none'} blurOnSubmit={false}
-                                       selectionColor={colors.teal}
-                                       blurOnSubmit={false} onSubmitEditing={() => {
-                                this.focusNextField('college');
-                            }} returnKeyType={"next"}
-                                       ref={input => {
-                                           this.inputs['mobile'] = input;
-                                       }}/>
+                    </ScrollView>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <TextInput onChangeText={(mobileNumber) => this.setState({mobileNumber})}
+                                   keyboardType="phone-pad" style={styles.inputField}
+                                   placeholder={'Your Mobile Number (in 10 digits)'}
+                                   underlineColorAndroid={'white'} autoCapitalize={'none'} blurOnSubmit={false}
+                                   selectionColor={colors.teal}
+                                   blurOnSubmit={false} onSubmitEditing={() => {
+                            this.focusNextField('college');
+                        }} returnKeyType={"next"}
+                                   ref={input => {
+                                       this.inputs['mobile'] = input;
+                                   }}/>
 
-                        </ScrollView>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <TextInput onChangeText={(college) => this.setState({college})} style={styles.inputField}
-                                       placeholder={'Your College'}
-                                       underlineColorAndroid={'white'} autoCapitalize={'words'} blurOnSubmit={false}
-                                       selectionColor={colors.teal}
-                                       blurOnSubmit={false} onSubmitEditing={() => {
-                                this.focusNextField('email');
-                            }} returnKeyType={"next"}
-                                       ref={input => {
-                                           this.inputs['college'] = input;
-                                       }}/>
+                    </ScrollView>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <TextInput onChangeText={(college) => this.setState({college})} style={styles.inputField}
+                                   placeholder={'Your College'}
+                                   underlineColorAndroid={'white'} autoCapitalize={'words'} blurOnSubmit={false}
+                                   selectionColor={colors.teal}
+                                   blurOnSubmit={false} onSubmitEditing={() => {
+                            this.focusNextField('email');
+                        }} returnKeyType={"next"}
+                                   ref={input => {
+                                       this.inputs['college'] = input;
+                                   }}/>
 
-                        </ScrollView>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <TextInput onChangeText={(email) => this.setState({email})} keyboardType="email-address"
-                                       style={styles.inputField} placeholder={'Your Email ID'}
-                                       underlineColorAndroid={'white'} autoCapitalize={'none'} blurOnSubmit={false}
-                                       selectionColor={colors.teal}
-                                       blurOnSubmit={false} returnKeyType={"done"}
-                                       ref={input => {
-                                           this.inputs['email'] = input;
-                                       }}/>
+                    </ScrollView>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <TextInput onChangeText={(email) => this.setState({email})} keyboardType="email-address"
+                                   style={styles.inputField} placeholder={'Your Email ID'}
+                                   underlineColorAndroid={'white'} autoCapitalize={'none'} blurOnSubmit={false}
+                                   selectionColor={colors.teal}
+                                   blurOnSubmit={false} returnKeyType={"done"}
+                                   ref={input => {
+                                       this.inputs['email'] = input;
+                                   }}/>
 
-                        </ScrollView>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <Text style={{color: colors.teal, fontSize: 22, marginTop: 10}}>Gender</Text>
-                        </ScrollView>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <Picker selectedValue={this.state.gender}
-                                    onValueChange={(itemValue, itemIndex) => this.setState({gender: itemValue})}
-                                    style={styles.pickerField} mode={'dropdown'}
-                                    itemStyle={{alignItems: 'center', color: colors.teal}} prompt={"Gender"}>
-                                <Picker.Item label="Male" value="Male"/>
-                                <Picker.Item label="Female" value="Female"/>
-                                <Picker.Item label="Other" value="Other"/>
-                            </Picker>
-                        </ScrollView>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <Text style={{color: colors.teal, fontSize: 22, marginTop: 10}}>Accomodation</Text>
-                        </ScrollView>
-                        <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
-                            <Picker selectedValue={this.state.accomodation}
-                                    onValueChange={(itemValue, itemIndex) => this.setState({accomodation: itemValue})}
-                                    style={styles.pickerField} mode={'dropdown'}
-                                    itemStyle={{alignItems: 'center', color: colors.teal}} prompt={"Accomodation"}>
-                                <Picker.Item label="Yes" value="1"/>
-                                <Picker.Item label="No" value="0"/>
-                            </Picker>
-                        </ScrollView>
+                    </ScrollView>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <Text style={{color: colors.teal, fontSize: 22, marginTop: 10}}>Gender</Text>
+                    </ScrollView>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <Picker selectedValue={this.state.gender}
+                                onValueChange={(itemValue, itemIndex) => this.setState({gender: itemValue})}
+                                style={styles.pickerField} mode={'dropdown'}
+                                itemStyle={{alignItems: 'center', color: colors.teal}} prompt={"Gender"}>
+                            <Picker.Item label="Male" value="Male"/>
+                            <Picker.Item label="Female" value="Female"/>
+                            <Picker.Item label="Other" value="Other"/>
+                        </Picker>
+                    </ScrollView>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <Text style={{color: colors.teal, fontSize: 22, marginTop: 10}}>Accomodation</Text>
+                    </ScrollView>
+                    <ScrollView scrollEnabled={false} contentContainerStyle={styles.inputFieldView}>
+                        <Picker selectedValue={this.state.accomodation}
+                                onValueChange={(itemValue, itemIndex) => this.setState({accomodation: itemValue})}
+                                style={styles.pickerField} mode={'dropdown'}
+                                itemStyle={{alignItems: 'center', color: colors.teal}} prompt={"Accomodation"}>
+                            <Picker.Item label="Yes" value="1"/>
+                            <Picker.Item label="No" value="0"/>
+                        </Picker>
+                    </ScrollView>
 
-                        <TouchableOpacity onPress={this.handleSignUp}
-                                          background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
-                            <View style={{
-                                marginLeft: 16,
-                                marginRight: 16,
-                                height: 50,
-                                borderColor: colors.teal,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                borderWidth: 1,
-                                borderRadius: 50,
-                                marginBottom: 8,
-                                width: Dimensions.get('window').width - 32
-                            }}>
-                                <Text style={{
-                                    color: colors.teal,
-                                    fontFamily: 'Montserrat-Regular',
-                                    fontSize: 22
-                                }}>Next</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </KeyboardAwareScrollView>
+                    <TouchableOpacity onPress={this.handleSignUp}
+                                      background={TouchableNativeFeedback.Ripple(colors.teal, true)}>
+                        <View style={{
+                            marginLeft: 16,
+                            marginRight: 16,
+                            height: 50,
+                            borderColor: colors.teal,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderWidth: 1,
+                            borderRadius: 50,
+                            marginBottom: 8,
+                            width: Dimensions.get('window').width - 32
+                        }}>
+                            <Text style={{
+                                color: colors.teal,
+                                fontFamily: 'Montserrat-Regular',
+                                fontSize: 22
+                            }}>Next</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             )
         }

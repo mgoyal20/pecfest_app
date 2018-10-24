@@ -2,7 +2,7 @@
   "expo": {
     "sdkVersion": "27.0.0",
     "name": "Pecfest'18",
-    "icon": "./icons/logo@1x.png",
+    "icon": "./icons/unnamed.png",
     "description": "Official app for Pecfest 2018",
     "version": "1.0.0",
     "orientation": "portrait",
